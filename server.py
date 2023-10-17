@@ -78,7 +78,7 @@ def _eval(single_request):
     if 'Evaluation finished.' in result.stdout and os.path.exists(resilt_file):
         result = dict()
         with open(resilt_file, "r") as f:
-            result = json.dumps(f.read())
+            result = f.read()
         if os.path.exists(os.path.dirname(resilt_file)):
             shutil.rmtree(os.path.dirname(resilt_file))
         return result, 200
